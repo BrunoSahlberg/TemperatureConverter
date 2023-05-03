@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Conversor de Temperatura"
+        android:textColor="#4CAF50"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNumber1"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Digite aqui..."
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInicial" />
+
+    <TextView
+        android:id="@+id/textViewInicial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Temp. Inicial:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="302dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="8dp"
+        android:checkedButton="@id/radioButtonCelsius1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber1">
+
+        <RadioButton
+            android:id="@+id/radioButtonCelsius1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Celsius"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFahrenheit1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fahrenheit"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonKelvin1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kelvin"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="232dp" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textConvertida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Converter para:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="307dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="8dp"
+        android:checkedButton="@id/radioButtonFahrenheit2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textConvertida">
+
+        <RadioButton
+            android:id="@+id/radioButtonCelsius2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Celsius"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="379dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFahrenheit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fahrenheit"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="427dp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonKelvin2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kelvin" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#4CAF50"
+        android:textColorHighlight="#8BC34A"
+        android:textSize="34sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <Button
+        android:id="@+id/btnResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#4CAF50"
+        android:onClick="Converter"
+        android:text="Converter"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
